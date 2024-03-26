@@ -14,6 +14,7 @@ func New(input string) *Lexer {
 }
 
 // This means that readChar() is a method of the Lexer type, and it can be called on instances of Lexer
+// TODO: As of now only ASCII characters are supported, allow full Unicode range support
 func (l *Lexer) readChar() {
 	if l.readPosition >= len(l.input) {
 		l.ch = 0 // ASCII code for "NUL"
