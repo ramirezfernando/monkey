@@ -26,11 +26,12 @@ func (l *Lexer) readChar() {
 		l.ch = l.input[l.readPosition]
 	}
 	l.position = l.readPosition
-	l.position += 1
+	l.readPosition += 1
 }
 
 func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
+	
 	switch l.ch {
 	case '=':
 		tok = newToken(token.ASSIGN, l.ch)
